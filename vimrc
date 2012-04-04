@@ -96,7 +96,7 @@ let g:notes_suffix = '.note'
 let g:notes_rules_text = 1
 
 " Powerline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
 let g:Powerline_symbols = 'fancy'
 
 """""""""""""""""""""""""""""""""""""""""""
