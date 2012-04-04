@@ -2,7 +2,7 @@
 " .vimrc
 " Author: Wojciech Inglot 
 " Mail: wojciech@inglot.net.pl
-" Based on many other vimrc found over the internet
+" Based on many other vimrc found over the internet.
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -20,82 +20,82 @@ syntax on
 """""""""""""""""""""""""""""""""""""""""""
 " turn off modelines to prevent securuty vulnerability
 set nomodeline
-" Always show status line
+" always show status line
 set laststatus=2
-" Set encoding to UTF-8
+" set encoding to utf-8
 set encoding=utf-8
-" Set tags directory
-set tags+=$HOME/.vim/tags
-" Colorscheme
+" set tags directory
+set tags+=$home/.vim/tags
+" colorscheme
 colorscheme badwolf
-" Automatically cd into the directory that the file is in
-autocmd BufEnter * execute "chdir ".escape(expand("%:p:h"), ' ')
-" Lots of cool vim things
+" automatically cd into the directory that the file is in
+autocmd bufenter * execute "chdir ".escape(expand("%:p:h"), ' ')
+" lots of cool vim things
 set nocompatible
-" More powerfull backspace
+" more powerfull backspace
 set backspace=2
-" Keep 50 lines of command history
+" keep 50 lines of command history
 set history=100
-" Show cursor position all the time
+" show cursor position all the time
 set ruler
-" Files with lower priority
+" files with lower priority
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
-" Show currently typed command
+" show currently typed command
 set showcmd
-" Copyindent from prev line
+" copyindent from prev line
 set autoindent
-" Spaces instead of tab character
+" spaces instead of tab character
 set expandtab
 set smarttab
 set shiftwidth=4
 set softtabstop=4
-" Spellcheck
+" spellcheck
 if version >= 700
    set spl=pl spell
    set nospell
 endif
-" Cool tab completion
+" cool tab completion
 set wildmenu
 set wildmode=list:longest,full
-" Mouse support
+" mouse support
 set mouse=a
-" Line numbers
+" line numbers
 set number
-" Ignore case and smartcase
+" ignore case and smartcase
 set ignorecase
 set smartcase
-" Incremental search and highlight
+" incremental search and highlight
 set incsearch
 set hlsearch
 
-" GUI stuff
+" gui stuff
 if has('gui_running')
-  map <S-Insert> <MiddleMouse>
-  map! <S-Insert> <MiddleMouse>
+  map <s-insert> <middlemouse>
+  map! <s-insert> <middlemouse>
   set guioptions-=m
-  set guioptions-=T
+  set guioptions-=t
 endif
 
 """""""""""""""""""""""""""""""""""""""""""
 " FILETYPES
 """""""""""""""""""""""""""""""""""""""""""
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd filetype python set omnifunc=pythoncomplete#complete
+autocmd filetype javascript set omnifunc=javascriptcomplete#completejs
+autocmd filetype html set omnifunc=htmlcomplete#completetags
+autocmd filetype css set omnifunc=csscomplete#completecss
+autocmd filetype xml set omnifunc=xmlcomplete#completetags
+autocmd filetype php set omnifunc=phpcomplete#completephp
+autocmd filetype c set omnifunc=ccomplete#complete
 
 """""""""""""""""""""""""""""""""""""""""""
-" FILETYPES
+" PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
-" Notes
+" notes
 let g:notes_directory = '~/Pulpit/AGH/Notatki'
 let g:notes_suffix = '.note'
 let g:notes_rules_text = 1
 
-" Powerline
+" powerline
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
 let g:Powerline_symbols = 'fancy'
 
@@ -104,7 +104,13 @@ let g:Powerline_symbols = 'fancy'
 """""""""""""""""""""""""""""""""""""""""""
 
 nnoremap ; :
-inoremap jj <Esc>
+inoremap jj <esc>
 let mapleader = ','
+" Buffers from other programs (Ctrl+c and Ctrl+v)
 nnoremap <leader>p "+gp
+nnoremap <leader>y "+yy
+vnoremap <leader>y "+y
+" Select all. Same as Ctrl+a
+nnoremap <leader>a VG
+
 nnoremap <leader>n :NERDTreeToggle<cr>
