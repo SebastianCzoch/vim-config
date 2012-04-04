@@ -74,6 +74,7 @@ if has('gui_running')
   map! <s-insert> <middlemouse>
   set guioptions-=m
   set guioptions-=T
+  set guifont=Ubuntu\ Mono\ for\ Powerline\ 13
 endif
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -96,7 +97,7 @@ let g:notes_suffix = '.note'
 let g:notes_rules_text = 1
 
 " powerline
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
 let g:Powerline_symbols = 'fancy'
 
 """""""""""""""""""""""""""""""""""""""""""
