@@ -25,7 +25,7 @@ set laststatus=2
 " set encoding to utf-8
 set encoding=utf-8
 " set tags directory
-set tags+=$home/.vim/tags
+set tags+=$HOME/.vim/tags
 " colorscheme
 colorscheme badwolf
 " automatically cd into the directory that the file is in
@@ -34,7 +34,7 @@ autocmd bufenter * execute "chdir ".escape(expand("%:p:h"), ' ')
 set nocompatible
 " more powerfull backspace
 set backspace=2
-" keep 50 lines of command history
+" keep 100 lines of command history
 set history=100
 " show cursor position all the time
 set ruler
@@ -54,7 +54,7 @@ if version >= 700
    set spl=pl spell
    set nospell
 endif
-" cool tab completion
+" cool file name tab completion
 set wildmenu
 set wildmode=list:longest,full
 " mouse support
@@ -73,19 +73,19 @@ if has('gui_running')
   map <s-insert> <middlemouse>
   map! <s-insert> <middlemouse>
   set guioptions-=m
-  set guioptions-=t
+  set guioptions-=T
 endif
 
 """""""""""""""""""""""""""""""""""""""""""
 " FILETYPES
 """""""""""""""""""""""""""""""""""""""""""
-autocmd filetype python set omnifunc=pythoncomplete#complete
-autocmd filetype javascript set omnifunc=javascriptcomplete#completejs
-autocmd filetype html set omnifunc=htmlcomplete#completetags
-autocmd filetype css set omnifunc=csscomplete#completecss
-autocmd filetype xml set omnifunc=xmlcomplete#completetags
-autocmd filetype php set omnifunc=phpcomplete#completephp
-autocmd filetype c set omnifunc=ccomplete#complete
+autocmd filetype python set omnifunc=pythoncomplete#Complete
+autocmd filetype javascript set omnifunc=javascriptcomplete#Completejs
+autocmd filetype html set omnifunc=htmlcomplete#Completetags
+autocmd filetype css set omnifunc=csscomplete#Completecss
+autocmd filetype xml set omnifunc=xmlcomplete#Completetags
+autocmd filetype php set omnifunc=phpcomplete#Completephp
+autocmd filetype c set omnifunc=ccomplete#Complete
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
