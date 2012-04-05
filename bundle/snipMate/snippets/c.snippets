@@ -7,9 +7,10 @@ snippet main
 	}
 # #include <...>
 snippet inc
-	#include <${1:stdio}.h>${2}
+	#include <${1:stdio.h}>${2}
+	${3}
 # #include "..."
-snippet Inc
+snippet inch
 	#include "${1:`Filename("$1.h")`}"${2}
 # #ifndef ... #define ... #endif
 snippet Def

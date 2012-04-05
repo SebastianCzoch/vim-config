@@ -25,9 +25,9 @@ set laststatus=2
 " set encoding to utf-8
 set encoding=utf-8
 " set tags directory
-set tags+=$HOME/.vim/tags
+set tags+=~/.vim/tags/cpp
 " colorscheme
-colorscheme badwolf
+colorscheme vombato
 " automatically cd into the directory that the file is in
 autocmd bufenter * execute "chdir ".escape(expand("%:p:h"), ' ')
 " lots of cool vim things
@@ -87,6 +87,7 @@ autocmd filetype css set omnifunc=csscomplete#Completecss
 autocmd filetype xml set omnifunc=xmlcomplete#Completetags
 autocmd filetype php set omnifunc=phpcomplete#Completephp
 autocmd filetype c set omnifunc=ccomplete#Complete
+autocmd filetype cpp set omnifunc=omni#cpp#complete#Main
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
@@ -97,8 +98,18 @@ let g:notes_suffix = '.note'
 let g:notes_rules_text = 1
 
 " powerline
-" set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
 let g:Powerline_symbols = 'fancy'
+
+" omnicppcomplete
+let OmniCpp_MayCompleteDot = 1 
+let OmniCpp_MayCompleteArrow = 1 
+let OmniCpp_MayCompleteScope = 1
+let OmniCpp_NamespaceSearch = 2
+let OmniCpp_SelectFirstItem = 2
+let OmniCpp_ShowPrototypeInAbbr = 1
+
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+set completeopt=menu,menuone
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING

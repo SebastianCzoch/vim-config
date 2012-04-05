@@ -3,3 +3,4 @@ Clone the repo and copy all the folders and files to ~/.vim dir
 cd ~/.vim/
 ln -s vimrc ~/.vimrc
 cp font/UbuntuMono-R-Powerline.otf ~/.fonts/
+fc-cache (updates font cache)
