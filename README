@@ -1,6 +1,10 @@
 Install guide:
-Clone the repo and copy all the folders and files to ~/.vim dir
-cd ~/.vim/
-ln -s vimrc ~/.vimrc
-cp font/UbuntuMono-R-Powerline.otf ~/.fonts/
-fc-cache (updates font cache)
+1. Clone the repo:
+    git clone git://github.com/szorti/vim-config.git ~/.vim
+2. Enter the .vim folder:
+    cd ~/.vim 
+3. Run the apply.sh script (copies font and link vimrc file)
+    ./apply.sh 
+
+Happy GVIMing!
+

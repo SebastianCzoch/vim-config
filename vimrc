@@ -26,6 +26,9 @@ set laststatus=2
 set encoding=utf-8
 " set tags directory
 set tags+=~/.vim/tags/cpp
+set tags+=~/.vim/tags/gl
+set tags+=~/.vim/tags/sdl
+set tags+=./tags;$HOME
 " colorscheme
 colorscheme vombato
 " automatically cd into the directory that the file is in
@@ -80,7 +83,7 @@ endif
 """""""""""""""""""""""""""""""""""""""""""
 " FILETYPES
 """""""""""""""""""""""""""""""""""""""""""
-autocmd filetype python set omnifunc=pythoncomplete#Complete
+"autocmd filetype python set omnifunc=pythoncomplete#Complete
 autocmd filetype javascript set omnifunc=javascriptcomplete#Completejs
 autocmd filetype html set omnifunc=htmlcomplete#Completetags
 autocmd filetype css set omnifunc=csscomplete#Completecss
@@ -110,6 +113,10 @@ let OmniCpp_ShowPrototypeInAbbr = 1
 
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 set completeopt=menu,menuone
+
+" AutoComplPop
+let g:acp_completeOption = 't,d,k'
+let g:acp_behaviorKeywordCommand = "\<C-n>"
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
