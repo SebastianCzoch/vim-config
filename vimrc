@@ -24,11 +24,6 @@ set nomodeline
 set laststatus=2
 " set encoding to utf-8
 set encoding=utf-8
-" set tags directory
-set tags+=~/.vim/tags/cpp
-set tags+=~/.vim/tags/gl
-set tags+=~/.vim/tags/sdl
-set tags+=./tags;$HOME
 " colorscheme
 colorscheme vombato
 " automatically cd into the directory that the file is in
@@ -111,11 +106,8 @@ let OmniCpp_NamespaceSearch = 2
 let OmniCpp_SelectFirstItem = 2
 let OmniCpp_ShowPrototypeInAbbr = 1
 
-autocmd InsertLeave * if pumvisible() == 0|pclose|endif
-set completeopt=menu,menuone
-
 " AutoComplPop
-let g:acp_completeOption = 't,d,k'
+let g:acp_completeOption = '.,w,t,d'
 let g:acp_behaviorKeywordCommand = "\<C-n>"
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -130,6 +122,7 @@ nnoremap <leader>p "+gp
 nnoremap <leader>y "+yy
 vnoremap <leader>y "+y
 " Select all. Same as Ctrl+a
-nnoremap <leader>a VG
-
+nnoremap <leader>a ggVG
+" Moving between buffers 
+nnoremap <leader>m <C-w>
 nnoremap <leader>n :NERDTreeToggle<cr>
