@@ -25,7 +25,7 @@ snippet if!=
 	${5}
 snippet jmp
 	jmp ${1:label}
-	{2}
+	${2}
 
 # Operations
 snippet add
@@ -45,7 +45,7 @@ snippet str
 	${1:name}text:
 	    .string	"${2:text}"
 	$1len:
-	    .long	( . - $1text )
+	    .long	( . - $1 )
 # Some .equ helpers
 snippet equ
 	.equ	${1:kernel},	${2:0x80}
@@ -53,6 +53,8 @@ snippet beginequ
 	.equ    kernel, 0x80	# Handle to kernel
 	.equ    exit,   0x01	# Handle to exit Function
 	.equ    write,  0x04	# Handle to file write function
+	.equ	create, 0x08	# Handle to file create function
+	.equ	read,	0x03	# Handel to file read function
 	${1}
 snippet stdequ
 	.equ	stdin,  0x00	# Handle to stdin
@@ -61,9 +63,19 @@ snippet stdequ
 	${1}
 snippet len
 	${1:mytext}len:
-	    .long	( . - $1len )
-# Function
+	    .long	( . - $1 )
+# Functiontt
 snippet fun
 	.type ${1:functionName}, @function
 	$1:
 	    ${2}
+
+# Start
+snippet start
+	.text
+	.global _start:
+	_start:
+	    ${1}
+	_theend:
+	    movl $exit, %eax
+	    int  $kernel
