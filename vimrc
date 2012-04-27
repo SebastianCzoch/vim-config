@@ -107,7 +107,7 @@ let OmniCpp_SelectFirstItem = 2
 let OmniCpp_ShowPrototypeInAbbr = 1
 
 " AutoComplPop
-let g:acp_completeOption = '.,w,t,d'
+set complete=.,w,t,d
 let g:acp_behaviorKeywordCommand = "\<C-n>"
 
 """""""""""""""""""""""""""""""""""""""""""

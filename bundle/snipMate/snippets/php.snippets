@@ -1,7 +1,11 @@
 snippet php
 	<?php
-	${1}
+	    ${1}
 	?>
+snippet php1
+	<?php ${1} ?>${2}
+snippet phpe
+	<?= ${1} ?>{2}
 snippet ec
 	echo "${1:string}"${2};
 snippet inc
@@ -136,16 +140,7 @@ snippet doc_i
 	} // END interface $1
 # class ...
 snippet class
-	/**
-	 * ${1}
-	 **/
-	class ${2:ClassName}
-	{
-		${3}
-		function ${4:__construct}(${5:argument})
-		{
-			${6:// code...}
-		}
+	class ${1:ClassName} {
 	}
 # define(...)
 snippet def
@@ -207,10 +202,13 @@ snippet foreach
 		${3:// code...}
 	}
 snippet fun
-	${1:public }function ${2:FunctionName}(${3})
-	{
+	${1:public }function ${2:FunctionName}(${3}) {
 		${4:// code...}
 	}
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet $
+	$this->${1}
+snippet [
+	[${1}]${2}

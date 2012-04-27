@@ -1,0 +1,69 @@
+# Commands
+snippet mov
+	mov${1:l/b/w} ${2:from}, ${3:to}
+	${4}
+snippet int
+	int ${1:$kernel}
+	${2}
+snippet loop
+	loop ${1:label}
+snippet if>
+	cmp${1:l/b/w} ${2:a}, ${3:b}
+	ja ${4:label}
+	${5}
+snippet if<
+	cmp${1:l/b/w} ${2:a}, ${3:b}
+	jb ${4:label}
+	${5}
+snippet if==
+	cmp${1:l/b/w} ${2:a}, ${3:b}
+	je ${4:label}
+	${5}
+snippet if!=
+	cmp${1:l/b/w} ${2:a}, ${3:b}
+	jne ${4:label}
+	${5}
+snippet jmp
+	jmp ${1:label}
+	{2}
+
+# Operations
+snippet add
+	add${1:l/b/w} ${2:a}, ${2:b}
+snippet sub
+	sub${1:l/b/w} ${2:a}, ${2:b}
+snippet and
+	and${1:l/b/w} ${2:a}, ${2:b}
+snippet xor
+	xor${1:l/b/w} ${2:a}, ${2:b}
+# Variable
+snippet var
+	${1:varName}:
+	    .${2:long/ascii/string/space}   ${3:value}
+	${4}
+snippet str
+	${1:name}text:
+	    .string	"${2:text}"
+	$1len:
+	    .long	( . - $1text )
+# Some .equ helpers
+snippet equ
+	.equ	${1:kernel},	${2:0x80}
+snippet beginequ
+	.equ    kernel, 0x80	# Handle to kernel
+	.equ    exit,   0x01	# Handle to exit Function
+	.equ    write,  0x04	# Handle to file write function
+	${1}
+snippet stdequ
+	.equ	stdin,  0x00	# Handle to stdin
+	.equ	stdout, 0x01	# Handel to stdout
+	.equ	stderr, 0x02	# Handle to stderr
+	${1}
+snippet len
+	${1:mytext}len:
+	    .long	( . - $1len )
+# Function
+snippet fun
+	.type ${1:functionName}, @function
+	$1:
+	    ${2}
