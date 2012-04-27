@@ -54,7 +54,9 @@ snippet beginequ
 	.equ    exit,   0x01	# Handle to exit Function
 	.equ    write,  0x04	# Handle to file write function
 	.equ	create, 0x08	# Handle to file create function
-	.equ	read,	0x03	# Handel to file read function
+	.equ	read,	0x03	# Handle to file read function
+	.equ	open,	0x05	# Handle to file open function
+	.equ	close,	0x06	# Handel to file close function
 	${1}
 snippet stdequ
 	.equ	stdin,  0x00	# Handle to stdin
@@ -79,3 +81,11 @@ snippet start
 	_theend:
 	    movl $exit, %eax
 	    int  $kernel
+snippet fopen
+	movl $open, %eax
+	movl ${1:$filename}, %ebx   # ebx wskazuje nazwe pliku
+	movl $flags, %ecx	    # ecx to flagi .equ flags, 0
+	movl $mode, %edx	    # edx to tryb otwarcia pliku, .equ mode, 0x180
+	int $kernel
+	if eax<0 error
+	movl %eax, ${2:filehandle}
