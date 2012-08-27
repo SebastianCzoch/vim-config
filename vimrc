@@ -116,6 +116,9 @@ let g:acp_behaviorKeywordCommand = "\<C-n>"
 
 nnoremap ; :
 inoremap jj <esc>
+" Redo
+nnoremap r :redo<cr>
+" Map the new <leader>
 let mapleader = ','
 " Buffers from other programs (Ctrl+c and Ctrl+v)
 nnoremap <leader>p "+gp
@@ -126,3 +129,7 @@ nnoremap <leader>a ggVG
 " Moving between buffers 
 nnoremap <leader>m <C-w>
 nnoremap <leader>n :NERDTreeToggle<cr>
+" FuzzyFinder file search
+nnoremap <leader>f :FufFile<cr>
+nnoremap <leader>g :FufFile **/<cr>
+nnoremap <leader>l :FufLine<cr>
