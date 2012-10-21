@@ -19,15 +19,13 @@ syntax on
 " GENERAL
 """""""""""""""""""""""""""""""""""""""""""
 " turn off modelines to prevent securuty vulnerability
-set nomodeline
+set modeline
 " always show status line
 set laststatus=2
 " set encoding to utf-8
 set encoding=utf-8
 " colorscheme
-colorscheme vombato
-" automatically cd into the directory that the file is in
-autocmd bufenter * execute "chdir ".escape(expand("%:p:h"), ' ')
+colorscheme cobaltish
 " lots of cool vim things
 set nocompatible
 " more powerfull backspace
@@ -52,9 +50,6 @@ if version >= 700
    set spl=pl spell
    set nospell
 endif
-" cool file name tab completion
-set wildmenu
-set wildmode=list:longest,full
 " mouse support
 set mouse=a
 " line numbers
@@ -72,43 +67,29 @@ if has('gui_running')
   map! <s-insert> <middlemouse>
   set guioptions-=m
   set guioptions-=T
-  set guifont=Ubuntu\ Mono\ for\ Powerline\ 13
+  set guifont=Ubuntu\ Mono\ for\ Powerline\ 11
 endif
 
 """""""""""""""""""""""""""""""""""""""""""
 " FILETYPES
 """""""""""""""""""""""""""""""""""""""""""
-"autocmd filetype python set omnifunc=pythoncomplete#Complete
-autocmd filetype javascript set omnifunc=javascriptcomplete#Completejs
-autocmd filetype html set omnifunc=htmlcomplete#Completetags
-autocmd filetype css set omnifunc=csscomplete#Completecss
-autocmd filetype xml set omnifunc=xmlcomplete#Completetags
-autocmd filetype php set omnifunc=phpcomplete#Completephp
-autocmd filetype c set omnifunc=ccomplete#Complete
-autocmd filetype cpp set omnifunc=omni#cpp#complete#Main
+"autocmd filetype javascript set omnifunc=javascriptcomplete#Completejs
+"autocmd filetype html set omnifunc=htmlcomplete#Completetags
+"autocmd filetype css set omnifunc=csscomplete#Completecss
+"autocmd filetype xml set omnifunc=xmlcomplete#Completetags
+"autocmd filetype php set omnifunc=phpcomplete#Completephp
+"autocmd filetype c set omnifunc=ccomplete#Complete
+"autocmd filetype cpp set omnifunc=omni#cpp#complete#Main
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
-" notes
-let g:notes_directory = '~/Pulpit/AGH/Notatki'
-let g:notes_suffix = '.note'
-let g:notes_rules_text = 1
-
 " powerline
 let g:Powerline_symbols = 'fancy'
 
-" omnicppcomplete
-let OmniCpp_MayCompleteDot = 1 
-let OmniCpp_MayCompleteArrow = 1 
-let OmniCpp_MayCompleteScope = 1
-let OmniCpp_NamespaceSearch = 2
-let OmniCpp_SelectFirstItem = 2
-let OmniCpp_ShowPrototypeInAbbr = 1
-
-" AutoComplPop
-set complete=.,w,t,d
-let g:acp_behaviorKeywordCommand = "\<C-n>"
+" autocomplete
+set completeopt=longest,menuone
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -116,20 +97,31 @@ let g:acp_behaviorKeywordCommand = "\<C-n>"
 
 nnoremap ; :
 inoremap jj <esc>
+
 " Redo
 nnoremap r :redo<cr>
+
 " Map the new <leader>
 let mapleader = ','
+
 " Buffers from other programs (Ctrl+c and Ctrl+v)
 nnoremap <leader>p "+gp
 nnoremap <leader>y "+yy
+
 vnoremap <leader>y "+y
+vnoremap <leader>p "+gp
+
 " Select all. Same as Ctrl+a
 nnoremap <leader>a ggVG
+
 " Moving between buffers 
 nnoremap <leader>m <C-w>
 nnoremap <leader>n :NERDTreeToggle<cr>
+
 " FuzzyFinder file search
 nnoremap <leader>f :FufFile<cr>
 nnoremap <leader>g :FufFile **/<cr>
-nnoremap <leader>l :FufLine<cr>
+nnoremap <leader>h :FufLine<cr>
+
+" Current file directory
+nnoremap <leader>cd :cd %:p:h<cr>
