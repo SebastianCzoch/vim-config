@@ -39,3 +39,17 @@ snippet chain
 	    return $5;
 	}
 	${6}
+# Getter and setter
+snippet getseth
+	${1:type} ${2:function}() const;
+	void $2($1 _$2);
+	${3}
+snippet getset
+	${1:type} ${2:class}::${3:function}() const {
+	    return m_$3;
+	}
+
+	void $2::$3($1 _$3) {
+	    m_$3 = _$3;
+	}
+	${4}

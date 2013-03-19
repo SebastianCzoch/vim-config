@@ -24,8 +24,6 @@ set modeline
 set laststatus=2
 " set encoding to utf-8
 set encoding=utf-8
-" colorscheme
-colorscheme cobaltish
 " lots of cool vim things
 set nocompatible
 " more powerfull backspace
@@ -60,6 +58,9 @@ set smartcase
 " incremental search and highlight
 set incsearch
 set hlsearch
+" command line autocomplete
+set wildmenu
+set wildmode=list:longest,full
 
 " gui stuff
 if has('gui_running')
@@ -68,6 +69,11 @@ if has('gui_running')
   set guioptions-=m
   set guioptions-=T
   set guifont=Ubuntu\ Mono\ for\ Powerline\ 11
+
+  " colorscheme
+  colorscheme molokai
+else
+  colorscheme molokai
 endif
 
 """""""""""""""""""""""""""""""""""""""""""
