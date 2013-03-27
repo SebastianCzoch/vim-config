@@ -121,13 +121,20 @@ vnoremap <leader>p "+gp
 nnoremap <leader>a ggVG
 
 " Moving between buffers 
-nnoremap <leader>m <C-w>
+nnoremap gj <C-w>j
+nnoremap gk <C-w>k
+nnoremap gh <C-w>h
+nnoremap gl <C-w>l
+nmap J 5j
+nmap K 5k
+xmap J 5j
+xmap K 5k
 nnoremap <leader>n :NERDTreeToggle<cr>
 
 " FuzzyFinder file search
 nnoremap <leader>f :FufFile<cr>
-nnoremap <leader>g :FufFile **/<cr>
-nnoremap <leader>h :FufLine<cr>
+nnoremap <C-p> :FufFile **/<cr>
+nnoremap <C-r> :FufLine<cr>
 
 " Current file directory
 nnoremap <leader>cd :cd %:p:h<cr>
