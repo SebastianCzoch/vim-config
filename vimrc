@@ -97,6 +97,10 @@ let g:Powerline_symbols = 'fancy'
 set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+" CtrlP
+let g:ctrlp_map = "<C-p>"
+let g:ctrlp_cmd = "CtrlP"
+
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
 """""""""""""""""""""""""""""""""""""""""""
@@ -130,11 +134,6 @@ nmap K 5k
 xmap J 5j
 xmap K 5k
 nnoremap <leader>n :NERDTreeToggle<cr>
-
-" FuzzyFinder file search
-nnoremap <leader>f :FufFile<cr>
-nnoremap <C-p> :FufFile **/<cr>
-nnoremap <C-r> :FufLine<cr>
 
 " Current file directory
 nnoremap <leader>cd :cd %:p:h<cr>
