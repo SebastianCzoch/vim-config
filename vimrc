@@ -98,7 +98,7 @@ set completeopt=longest,menuone
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " CtrlP
-let g:ctrlp_map = "<C-p>"
+let g:ctrlp_map = "<c-p>"
 let g:ctrlp_cmd = "CtrlP"
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -129,6 +129,11 @@ nnoremap gj <C-w>j
 nnoremap gk <C-w>k
 nnoremap gh <C-w>h
 nnoremap gl <C-w>l
+
+" Moving between tabs
+nnoremap tl gt
+nnoremap th gT
+
 nmap J 5j
 nmap K 5k
 xmap J 5j
