@@ -29,7 +29,7 @@ set nocompatible
 " more powerfull backspace
 set backspace=2
 " keep 100 lines of command history
-set history=100
+set history=200
 " show cursor position all the time
 set ruler
 " files with lower priority
@@ -41,13 +41,8 @@ set autoindent
 " spaces instead of tab character
 set expandtab
 set smarttab
-set shiftwidth=4
-set softtabstop=4
-" spellcheck
-if version >= 700
-   set spl=pl spell
-   set nospell
-endif
+set shiftwidth=2
+set softtabstop=2
 " mouse support
 set mouse=a
 " line numbers
@@ -60,42 +55,16 @@ set incsearch
 set hlsearch
 " command line autocomplete
 set wildmenu
-set wildmode=list:longest,full
-
-" gui stuff
-if has('gui_running')
-  map <s-insert> <middlemouse>
-  map! <s-insert> <middlemouse>
-  set guioptions-=m
-  set guioptions-=T
-  set guifont=Ubuntu\ Mono\ for\ Powerline\ 11
-
-  " colorscheme
-  colorscheme molokai
-else
-  colorscheme molokai
-endif
-
-"""""""""""""""""""""""""""""""""""""""""""
-" FILETYPES
-"""""""""""""""""""""""""""""""""""""""""""
-"autocmd filetype javascript set omnifunc=javascriptcomplete#Completejs
-"autocmd filetype html set omnifunc=htmlcomplete#Completetags
-"autocmd filetype css set omnifunc=csscomplete#Completecss
-"autocmd filetype xml set omnifunc=xmlcomplete#Completetags
-"autocmd filetype php set omnifunc=phpcomplete#Completephp
-"autocmd filetype c set omnifunc=ccomplete#Complete
-"autocmd filetype cpp set omnifunc=omni#cpp#complete#Main
+set wildmode=longest,list:longest
+" colorscheme
+colorscheme molokai
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
-" powerline
-let g:Powerline_symbols = 'fancy'
-
 " autocomplete
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+set complete=.,b,u,]
+set completeopt=menu,preview
 
 " CtrlP
 let g:ctrlp_map = "<c-p>"
@@ -106,7 +75,6 @@ let g:ctrlp_cmd = "CtrlP"
 """""""""""""""""""""""""""""""""""""""""""
 
 nnoremap ; :
-inoremap jj <esc>
 
 " Redo
 nnoremap r :redo<cr>
@@ -125,10 +93,10 @@ vnoremap <leader>p "+gp
 nnoremap <leader>a ggVG
 
 " Moving between buffers 
-nnoremap gj <C-w>j
-nnoremap gk <C-w>k
-nnoremap gh <C-w>h
-nnoremap gl <C-w>l
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
 
 " Moving between tabs
 nnoremap tl gt
@@ -138,7 +106,7 @@ nmap J 5j
 nmap K 5k
 xmap J 5j
 xmap K 5k
-nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <C-e> :NERDTreeToggle<cr>
 
 " Current file directory
 nnoremap <leader>cd :cd %:p:h<cr>
