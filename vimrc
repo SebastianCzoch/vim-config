@@ -62,6 +62,7 @@ set pastetoggle=<F2>
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_powerline_fronts=0
+let g:airline_theme="wombat"
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
