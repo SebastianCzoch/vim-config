@@ -1,19 +1,14 @@
 """""""""""""""""""""""""""""""""""""""""""
 " .vimrc
 " Author: Wojciech Inglot 
-" Mail: wojciech@inglot.net.pl
-" Based on many other vimrc found over the internet.
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
 " PATHOGEN
 """""""""""""""""""""""""""""""""""""""""""
-filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-" enable file detection
-filetype plugin indent on
+execute pathogen#infect()
 syntax on
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""
 " GENERAL
@@ -28,7 +23,7 @@ set encoding=utf-8
 set nocompatible
 " more powerfull backspace
 set backspace=2
-" keep 100 lines of command history
+" keep 200 lines of command history
 set history=200
 " show cursor position all the time
 set ruler
@@ -58,17 +53,15 @@ set wildmenu
 set wildmode=longest,list:longest
 " colorscheme
 colorscheme molokai
+" set paste / set nopaste toggle
+set pastetoggle=<F2>
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
-" autocomplete
-set complete=.,b,u,]
-set completeopt=menu,preview
-
-" CtrlP
-let g:ctrlp_map = "<c-p>"
-let g:ctrlp_cmd = "CtrlP"
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_powerline_fronts=0
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -108,5 +101,3 @@ xmap J 5j
 xmap K 5k
 nnoremap <C-e> :NERDTreeToggle<cr>
 
-" Current file directory
-nnoremap <leader>cd :cd %:p:h<cr>
