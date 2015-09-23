@@ -55,6 +55,8 @@ set wildmode=longest,list:longest
 colorscheme soda
 " set paste / set nopaste toggle
 set pastetoggle=<F2>
+" highlight current line
+set cursorline
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
