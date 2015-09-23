@@ -52,7 +52,7 @@ set hlsearch
 set wildmenu
 set wildmode=longest,list:longest
 " colorscheme
-colorscheme molokai
+colorscheme soda
 " set paste / set nopaste toggle
 set pastetoggle=<F2>
 
