@@ -67,7 +67,7 @@ hi Search          ctermfg=253 ctermbg=66
 hi SignColumn      ctermfg=148 ctermbg=235
 hi SpecialChar     ctermfg=197               cterm=bold
 hi SpecialComment  ctermfg=245               cterm=bold
-hi Special         ctermfg=81  ctermbg=232
+hi Special         ctermfg=81
 
 hi Statement       ctermfg=197               cterm=bold
 hi StatusLine      ctermfg=238 ctermbg=253
