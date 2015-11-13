@@ -66,6 +66,8 @@ let g:airline_right_sep=''
 let g:airline_powerline_fronts=0
 let g:airline_theme="wombat"
 
+let g:multi_cursor_exit_from_insert_mode=0
+
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
 """""""""""""""""""""""""""""""""""""""""""
