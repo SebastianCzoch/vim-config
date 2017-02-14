@@ -101,9 +101,5 @@ nnoremap <C-l> <C-w>l
 nnoremap tl gt
 nnoremap th gT
 
-nmap J 5j
-nmap K 5k
-xmap J 5j
-xmap K 5k
 nnoremap <C-e> :NERDTreeToggle<cr>
 
