@@ -1,3 +1,18 @@
 [submodule "bundle/vim-autopep8"]
     path = bundle/vim-autopep8
     url = git@github.com:tell-k/vim-autopep8.git
+
+[submodule "bundle/YouCompleteMe"]
+    path = bundle/YouCompleteMe
+    url = git@github.com:Valloric/YouCompleteMe.git
+
+[submodule "bundle/editorconfig-vim"]
+    path = bundle/editorconfig-vim
+    url = https://github.com/editorconfig/editorconfig-vim.git
+
+[submodule "bundle/indentLine"]
+    path = bundle/indentLine
+    url = git@github.com:Yggdroot/indentLine.git
+    
+
+
