@@ -13,6 +13,7 @@
 [submodule "bundle/indentLine"]
     path = bundle/indentLine
     url = git@github.com:Yggdroot/indentLine.git
-    
 
-
+[submodule "bundle/vim-go"]
+    path = bundle/vim-go
+    url = git@github.com:fatih/vim-go.git

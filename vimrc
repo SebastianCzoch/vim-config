@@ -68,6 +68,9 @@ let g:airline_theme="lucius"
 let g:airline#extensions#tabline#enabled = 1
 
 let g:multi_cursor_exit_from_insert_mode=0
+let g:autopep8_max_line_length=119
+let g:autopep8_disable_show_diff=1
+autocmd BufWritePre *.py call Autopep8()
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
