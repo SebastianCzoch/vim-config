@@ -10,7 +10,6 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
 """""""""""""""""""""""""""""""""""""""""""
 " GENERAL
 """""""""""""""""""""""""""""""""""""""""""
@@ -52,27 +51,30 @@ set hlsearch
 " command line autocomplete
 set wildmenu
 set wildmode=longest,list:longest
-" colorscheme
-colorscheme soda
-set background=dark
 " set paste / set nopaste toggle
 set pastetoggle=<F2>
 " highlight current line
 set cursorline
 set tabstop=4
-
-let g:indent_guides_enable_on_vim_startup = 1
+colorscheme soda
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
 
-
+let g:indentLine_leadingSpaceChar="."
+let g:indentLine_leadingSpaceEnabled=1
+let g:indentLine_faster=1
+let g:indentLine_char="¦"
+let g:indentLine_color_term=237
 let g:multi_cursor_exit_from_insert_mode=0
+
+" Python
 let g:autopep8_max_line_length=119
 let g:autopep8_disable_show_diff=1
 autocmd BufWritePre *.py call Autopep8()
 
+" Go
 let g:go_fmt_command = "goimports"
 
 """""""""""""""""""""""""""""""""""""""""""
