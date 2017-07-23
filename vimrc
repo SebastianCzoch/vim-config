@@ -1,6 +1,7 @@
 """""""""""""""""""""""""""""""""""""""""""
 " .vimrc
 " Author: Wojciech Inglot 
+" Edited: Sebastian Czoch
 """""""""""""""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""""""""""""
@@ -53,24 +54,26 @@ set wildmenu
 set wildmode=longest,list:longest
 " colorscheme
 colorscheme soda
+set background=dark
 " set paste / set nopaste toggle
 set pastetoggle=<F2>
 " highlight current line
 set cursorline
+set tabstop=4
+
+let g:indent_guides_enable_on_vim_startup = 1
 
 """""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
-let g:airline_left_sep=''
-let g:airline_right_sep='|'
-let g:airline_powerline_fronts=0
-let g:airline_theme="lucius"
-let g:airline#extensions#tabline#enabled = 1
+
 
 let g:multi_cursor_exit_from_insert_mode=0
 let g:autopep8_max_line_length=119
 let g:autopep8_disable_show_diff=1
 autocmd BufWritePre *.py call Autopep8()
+
+let g:go_fmt_command = "goimports"
 
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
@@ -105,4 +108,3 @@ nnoremap tl gt
 nnoremap th gT
 
 nnoremap <C-e> :NERDTreeToggle<cr>
-
