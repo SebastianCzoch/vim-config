@@ -17,6 +17,11 @@
 [submodule "bundle/vim-go"]
     path = bundle/vim-go
     url = git@github.com:fatih/vim-go.git
+
 [submodule "bundle/vim-lua"]
 	path = bundle/vim-lua
 	url = https://github.com/tbastos/vim-lua.git
+
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
