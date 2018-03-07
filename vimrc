@@ -62,21 +62,21 @@ colorscheme soda
 " PLUGINS
 """""""""""""""""""""""""""""""""""""""""""
 
-let g:indentLine_leadingSpaceChar="."
-let g:indentLine_leadingSpaceEnabled=1
 let g:indentLine_faster=1
 let g:indentLine_char="¦"
 let g:indentLine_color_term=237
 let g:multi_cursor_exit_from_insert_mode=0
 
 " Python
-let g:autopep8_max_line_length=119
-let g:autopep8_disable_show_diff=1
-autocmd BufWritePre *.py call Autopep8()
+"let g:autopep8_max_line_length=119
+"let g:autopep8_disable_show_diff=1
+"autocmd BufWritePre *.py call Autopep8()
 
 " Go
 let g:go_fmt_command = "goimports"
 
+let g:ale_linters = {'go': ['gometalinter']}
+"
 """""""""""""""""""""""""""""""""""""""""""
 " MAPPING
 """""""""""""""""""""""""""""""""""""""""""
